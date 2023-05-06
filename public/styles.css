@@ -1,0 +1,45 @@
+body{
+  color: white;
+  background: rgb(4, 4, 70);
+}
+.clear::before, .clear::after {
+  content: "";
+  display: table;
+}
+.clear::after {
+  clear: both;
+}
+.clear {
+  clear: both;
+  *zoom: 1.0;
+}
+h1, h3 {
+  text-align: center;
+}
+h1 {
+  font-size: 3rem;
+}
+h3{
+  font-size: 1.5rem;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+section {
+  text-align: center;
+  width: 28%;
+  height: 450px;
+  padding: 20px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  float: left;
+  border: 5px groove red;
+}
+div {
+  width: 80%;
+  margin: auto;
+}
+img {
+  height: 250px;
+  width: 60%;
+  margin-top: 10px;
+}

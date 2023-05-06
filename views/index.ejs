@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>My Top Anime</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <h1>Your Top Anime</h1>
+  <h2>Enter Anime</h2>
+  <form action="/messages" method="POST">
+    <input type="text" placeholder="Anime" name="name" maxlength="50" required>
+    <input type="text" placeholder="Quick Description" name="desc" maxlength="200" required>
+    <input type="text" placeholder="Image URL" name="img" required>
+    <button type="submit">Submit</button>
+  </form>
+
+  <h3>Top <%= messages.length %> Anime(s)</h3>
+  <div class="clear">
+    <% for(var i=0; i<messages.length; i++) {%>
+      <section>
+        <span><i data-animeid="<%=messages[i]._id%>" class="fa fa-trash"></i></span>
+        <h2>
+          <span id="anime"><%= messages[i].name %></span> <span>#<%= i + 1 %></span>
+        </h2>
+        <p class="message" style="word-wrap: break-word;">
+          <%= messages[i].desc %>
+        </p>
+        <img src="<%= messages[i].img %>" alt="<%= messages[i].name %> Image">
+      </section>
+      <% } %>
+  </div>
+  
+
+
+
+  <script src="main.js"></script>
+
+</body>
+
+</html>
